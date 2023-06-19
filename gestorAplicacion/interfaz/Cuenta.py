@@ -1,26 +1,18 @@
-﻿class Cuenta:
+# Ana Guarín
+# Isabela Hernandez
+# Julián Álvarez
+class Cuenta:
 
-    numeroCuenta = 0
-
-    def __init__(self, usuario, divisa, nombre):
-        self._numeroCuenta = Cuenta.numeroCuenta
+    def __init__(self, usuario, nombre):
         self._usuario = usuario
         self._saldo = 0
-        self._divisa = divisa
         self._nombre = nombre
-        Cuenta.numeroCuenta += 1
 
     def getNombre(self):
         return self._nombre
 
     def setNombre(self, nombre):
         self._nombre = nombre
-        
-    def getNumeroCuenta(self):
-        return self._numeroCuenta
-
-    def setNumeroCuenta(self, numeroCuenta):
-        self._numeroCuenta = numeroCuenta
 
     def getUsuario(self):
         return self._usuario
@@ -43,10 +35,3 @@
 
     def setSaldo(self, saldo):
         self._saldo = saldo
-
-    def getDivisa(self):
-        return self._divisa
-
-    def setDivisa(self, divisa):
-        self._divisa = divisa
-

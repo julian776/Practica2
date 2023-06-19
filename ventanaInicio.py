@@ -11,7 +11,7 @@ class VentanaInicio(Tk):
         self._usuario = usuario
 
         # Parámetros de la ventana de inicio
-        self.title('Sistema Gestor de Dinero')
+        self.title('Finanzas Personales')
         self.option_add("*tearOff",  False)
         self.geometry("1366x768")
         self.resizable(False,False)
@@ -46,22 +46,21 @@ class P1(Frame):
         self._p4_1 = Frame(self)
         self._p4_2 = Frame(self)
 
-        textoSaludo = f"Bienvenido(a) al Sistema de Gestor de Dinero\n"
+        textoSaludo = f"Bienvenido(a) Finanzas Personales\n"
 
         self._saludo = Label(self._p3, text = textoSaludo, font = ("Arial Rounded MT Bold", 16), fg = "#131D60", bg= "#AEDEF5")
         self._saludo.pack()
 
-        textoDescripcion = f"El Sistema de Gestor de Dinero es una aplicación que permite al usuario realizar multiples tareas como:\n" \
-                           f"1. Ver saldos disponibles en la cuenta.\n" \
+        textoDescripcion = f"Finanzas Personales es una aplicación que permite al usuario realizar multiples tareas como:\n" \
+                           f"1. Ver Estadisticas de la cuenta.\n" \
                            f"2. Ingresar dinero a su cuenta.\n" \
                            f"3. Mover dinero en su cuenta.\n" \
-                           f"4. Enviar y sacar dinero de su cuenta.\n" \
-                           f"5. Agregar bolsillo a su cuenta.\n" \
-                           f"6. Agregar colchon a su cuenta.\n" \
-                           f"7. Agregar meta a su cuenta.\n" \
-                           f"8. Modificar Colchon\Bolsillo\Meta.\n" \
-                           f"9. Solicitar Prestamo.\n" \
-                           f"10. Abonar a un prestamo o meta.\n" \
+                           f"4. Sacar dinero de su cuenta.\n" \
+                           f"5. Agregar Ahorro a su cuenta.\n" \
+                           f"6. Agregar meta a su cuenta.\n" \
+                           f"7. Modificar Ahorro\Bolsillo\Meta.\n" \
+                           f"8. Solicitar Prestamo.\n" \
+                           f"9. Abonar a un prestamo o meta.\n" \
                            
         self._descripcion = Label(self._p3, text = textoDescripcion, width = 100, justify = "left", font=("Verdana", 8))
 
@@ -70,7 +69,7 @@ class P1(Frame):
         self._imagenes = []
 
         for i in range(5):
-            archivo = f"./multimedia/Imagen{i+1}.png"
+            archivo = os.path.join(pathlib.Path(__file__).parent.parent.parent.absolute(), f"practica-g1-e5\\Python\multimedia\Imagen{i+1}.png")
             imagen = PhotoImage(file = archivo)
             self._imagenes.append(imagen)
 
@@ -145,7 +144,7 @@ class P2(Frame):
 
     # Carga imagen en formato png
     def cargarHVImagen(self, hv_num, numero):
-        path = './multimedia/IMG{0}{1}.png'.format(hv_num, numero)
+        path = os.path.join(pathlib.Path(__file__).parent.parent.parent.absolute(),'practica-g2-e6\\Python\\multimedia\\IMG{0}{1}.png'.format(hv_num, numero))
         photo = PhotoImage(file = path)
         self._labels[numero].configure(image = photo)
         self._labels[numero].image = photo 
@@ -156,7 +155,7 @@ class P2(Frame):
         self._text.grid(row = 1, column = 0)
         self._text.bind('<Button-1>', self.proximo)
 
-        path = './multimedia/TXT{0}4.txt'.format(numero)
+        path = os.path.join(pathlib.Path(__file__).parent.parent.parent.absolute(),'practica-g2-e6\\Python\\multimedia\\TXT{0}4.txt'.format(numero))
 
         with open(path, "r+") as hv_text:
             self._text.insert(INSERT, hv_text.read())

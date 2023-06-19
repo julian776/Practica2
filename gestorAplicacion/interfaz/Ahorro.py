@@ -1,10 +1,14 @@
-﻿from gestorAplicacion.usuario.Cuenta import Cuenta
-from datetime import date, time, datetime
+# Ana Guarín
+# Isabela Hernandez
+# Julián Álvarez
 
-class Colchon(Cuenta):
+from gestorAplicacion.interfaz import Cuenta
+from datetime import date
 
-    def __init__(self, usuario, divisa, nombre, fechaRetiro):
-        super().__init__(usuario,divisa, nombre)
+class Ahorro(Cuenta):
+
+    def __init__(self, usuario, nombre, fechaRetiro):
+        super().__init__(usuario, nombre)
         self._fechaRetiro = fechaRetiro
 
     def retirar(self, monto):
