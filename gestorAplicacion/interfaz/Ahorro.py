@@ -2,7 +2,7 @@
 # Isabela Hernandez
 # Julián Álvarez
 
-from gestorAplicacion.interfaz import Cuenta
+from gestorAplicacion.interfaz.Cuenta import Cuenta
 from datetime import date
 
 class Ahorro(Cuenta):

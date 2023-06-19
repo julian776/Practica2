@@ -7,7 +7,8 @@ class Serializador:
         self._usuario = usuario
 
     def serializar(self):
-        path =  "./src/tmp/usuario.pkl"
+        cwd = os.getcwd()
+        path =  cwd + '/baseDatos/src/tmp/usuario.pkl'
         picklefile = open(path, "wb")
         pickle.dump(self._usuario, picklefile)
         picklefile.close()

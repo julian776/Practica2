@@ -125,7 +125,7 @@ class VentanaUsuario(Tk):
             if not valor.isnumeric():
                 raise ExcepcionNumerica(valor)
 
-        # Ayuda -> Acerca de
+        # Ayuda
         def infoDevs():
             ventanaDevs = Tk()
             ventanaDevs.geometry("640x360")

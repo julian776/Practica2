@@ -1,6 +1,6 @@
 import pickle
 
-from gestorAplicacion.interfaz import Categoria
+from gestorAplicacion.interfaz.Categoria import Categoria
 
 
 class Usuario:
