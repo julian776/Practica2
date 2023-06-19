@@ -132,7 +132,7 @@ class P2(Frame):
 
     # Función para mostrar la siguiente hoja de vida
     def proximo(self, _):
-        if self._next_hv < 4:
+        if self._next_hv < 2:
             self._next_hv = self._next_hv + 1
         else:
             self._next_hv = 0
