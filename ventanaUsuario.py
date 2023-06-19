@@ -36,6 +36,26 @@ class VentanaUsuario(Tk):
         self._barraMenu.add_cascade(label="Archivo", menu=archivo)
         self.config(menu= self._barraMenu)
 
+        def infoApp():
+            ventanaDevs = Tk()
+            ventanaDevs.geometry("800x300")
+            ventanaDevs.resizable(False,False)
+            ventanaDevs.title("Aplicacion-Sistemas Gestor de Dinero")
+
+            textoInfo = f"Finanzas Personales es una aplicación que permite al usuario realizar multiples tareas como:\n" \
+                           f"1. Ver Estadisticas de la cuenta.\n" \
+                           f"2. Ingresar dinero a su cuenta.\n" \
+                           f"3. Mover dinero en su cuenta.\n" \
+                           f"4. Sacar dinero de su cuenta.\n" \
+                           f"5. Agregar Ahorro a su cuenta.\n" \
+                           f"6. Agregar meta a su cuenta.\n" \
+                           f"7. Modificar Ahorro\Bolsillo\Meta.\n" \
+                           f"8. Solicitar Prestamo.\n" \
+                           f"9. Abonar a un prestamo o meta.\n" \
+
+            devs = Label(ventanaDevs, text = textoInfo, justify = "left", font=("Verdana", 12))
+            devs.pack(fill=tkinter.Y, expand=True)
+
         procesosYConsultas = Menu(self._barraMenu)
 
         verSaldosDispo = Menu(self._barraMenu)
@@ -145,6 +165,7 @@ class VentanaUsuario(Tk):
             serializar = Serializador(self._usuario)
             serializar.serializar()
             self.destroy()
+            
 
         #Pantalla de inicio
 
