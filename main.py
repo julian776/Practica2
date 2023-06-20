@@ -11,18 +11,8 @@ usuario = Usuario("1","Administrador","administrador@unal.edu.co")
 serializar = Serializador(usuario)
 serializar.serializar()
 
-#Se deserializa el usuario administrador
-# deserializar = Deserializador()
-# deserializar.deserializar()
-# usuario = deserializar.getArgs()
-
 # Ventana de inicio
 ventana =  VentanaInicio(usuario)
 
 # Ejecuta la ventana
 ventana.mainloop()
-
-#Creación del usuario administrador
-#usuario = Usuario("1","Administrador","administrador@unal.edu.co",date.today(),"12345")
-#serializar = Serializador(usuario)
-#serializar.serializar()

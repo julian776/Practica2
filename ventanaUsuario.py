@@ -184,8 +184,8 @@ class VentanaUsuario(Tk):
         nombrePantallaInicio = Label(framePantallaInicio, text="Bienvenidee", font=("Verdana", 16), fg="#8EAC50")
         outputPantallaInicio = Text(framePantallaInicio, height=100, font=("Verdana",10))
 
-        nombrePantallaInicio.pack
-        outputPantallaInicio.pack(fill=X, expand=True, padx=(10,10))
+        nombrePantallaInicio.pack()
+        outputPantallaInicio.pack(fill=X, expand=True, padx=(10, 10))
 
         VentanaUsuario.framesEnPantalla.append(framePantallaInicio)
         cambiarVista(framePantallaInicio)
