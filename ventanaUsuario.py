@@ -30,7 +30,6 @@ class VentanaUsuario(Tk):
     def __init__(self, usuario):
         super().__init__()
         self._usuario = usuario
-        self._valoresMetas = [["Moto", "no", "0", "100"], ["Viaje", "no", "0", "500"], ["Viaje", "no", "0", "500"], ["Viaje", "no", "0", "500"]]
 
         # Parámetros de la ventana de usuario
 
