@@ -1,5 +1,11 @@
-import pickle
 
+
+# Ana Guarín
+# Isabela Hernandez
+# Julián Álvarez
+# Cristian Imbacuan
+
+import pickle
 from gestorAplicacion.interfaz.Categoria import Categoria
 
 

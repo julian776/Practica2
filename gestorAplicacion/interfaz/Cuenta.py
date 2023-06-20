@@ -1,6 +1,9 @@
+
 # Ana Guarín
 # Isabela Hernandez
 # Julián Álvarez
+# Cristian Imbacuan
+
 class Cuenta:
 
     def __init__(self, usuario, nombre):

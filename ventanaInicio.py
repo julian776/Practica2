@@ -46,7 +46,7 @@ class P1(Frame):
         self._p4_1 = Frame(self)
         self._p4_2 = Frame(self)
 
-        textoSaludo = f"Bienvenido(a) Finanzas Personales\n"
+        textoSaludo = f"Bienvenido(a) a Finanzas Personales\n"
 
         self._saludo = Label(self._p3, text = textoSaludo, font = ("Arial Rounded MT Bold", 16), fg = "#131D60", bg= "#AEDEF5")
         self._saludo.pack()
@@ -62,7 +62,7 @@ class P1(Frame):
                            f"8. Solicitar Prestamo.\n" \
                            f"9. Abonar a un prestamo o meta.\n" \
                            
-        self._descripcion = Label(self._p3, text = textoDescripcion, width = 100, justify = "left", font=("Verdana", 8))
+        self._descripcion = Label(self._p3, text = textoDescripcion, width = 80, justify = "left", font=("Verdana", 8))
 
         # Imagenes 5 para ventana de inicio
         self._imagenActual = 0 
@@ -73,13 +73,13 @@ class P1(Frame):
             imagen = PhotoImage(file = archivo)
             self._imagenes.append(imagen)
 
-         # Cambiar Imagen
-        self._imagen = Label(self._p4_1, image = self._imagenes[0], height = 480, width = 640)
+        # Cambiar Imagen
+        self._imagen = Label(self._p4_1, image = self._imagenes[0], height = 400, width = 600)
         self._imagen.bind('<Enter>', self.cambiarImagen) 
         self._imagen.pack()
 
         # Boton de acceso a la aplicacion abajo en P4
-        self._boton = Button(self._p4_2, text = "Acceder a la aplicacion", font = ("Arial Rounded MT Bold", 16), fg = "white", bg = "#245efd", command = lambda: self.accederApp())
+        self._boton = Button(self._p4_2, text = "Acceder a la aplicacion", font = ("Arial Rounded MT Bold", 16), fg = "white", bg = "#8EAC50", command = lambda: self.accederApp())
         self._boton.pack()
 
         # Colocar todos los elementos en pantalla
@@ -100,7 +100,7 @@ class P1(Frame):
     # Acceder a la aplicacion al darle click al boton de P4
     def accederApp(self):
         self._ventana.destroy()
-        ventanaUsuario = VentanaUsuario(self._usuario)
+        ventanaUsuario.VentanaUsuario(self._usuario)
         
 
 # Frame P2 - Hoja de vida de los integrantes
@@ -132,7 +132,7 @@ class P2(Frame):
 
     # Función para mostrar la siguiente hoja de vida
     def proximo(self, _):
-        if self._next_hv < 2:
+        if self._next_hv < 3:
             self._next_hv = self._next_hv + 1
         else:
             self._next_hv = 0
@@ -149,7 +149,7 @@ class P2(Frame):
         self._labels[numero].configure(image = photo)
         self._labels[numero].image = photo 
 
-     # Carga texto en formato txt
+    # Carga texto en formato txt
     def cargarHVTexto(self, numero):
         self._text = Text(self._p5, height = 10, font = ("Arial Rounded MT Bold",10), width = 80)
         self._text.grid(row = 1, column = 0)

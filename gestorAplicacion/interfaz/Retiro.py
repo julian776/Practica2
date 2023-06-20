@@ -2,18 +2,18 @@
 # Ana Guarín
 # Isabela Hernandez
 # Julián Álvarez
+# Cristian Mena
 
-
-from gestorAplicacion.interfaz import Transaccion
-from gestorAplicacion.interfaz import Categoria
+from gestorAplicacion.interfaz.Transaccion import Transaccion
+from gestorAplicacion.interfaz.Categoria import Categoria
 
 class Retiro(Transaccion):
-    def __init__(self, monto, fechaCreacion, cuentaOrigen=None, cuentaDestino=None, categoria=Categoria.Nulo):
+    def __init__(self, monto, fechaCreacion, cuentaOrigen, cuantaDestino, categoria):
         super().__init__(monto, fechaCreacion)
         self._cuentaOrigen = cuentaOrigen
-        self._cuentaDestino = cuentaDestino
+        self._cuentaDestino = cuantaDestino
         self._categoria = categoria
-
+        
         if categoria != Categoria.Nulo:
             categoria.setSaldo(categoria.getSaldo() - monto)
 

@@ -35,7 +35,7 @@ class FieldFrame(Frame):
             labelCriterio.grid(column=0, row=i+1, padx = (10,10), pady = (10,10))
 
             # Crear y colocar entrada de cada criterio
-            entryValor = Entry(self, font = ("Arial Rounded MT Bold", 12))
+            entryValor = Entry(self, font = ("Arial Rounded MT Bold", 12), width=30)
             entryValor.grid(column=1, row=i+1, padx = (10,10), pady = (10,10))
 
             # Colocar el valor inicial si lo hay
@@ -55,6 +55,13 @@ class FieldFrame(Frame):
     def getValue(self, criterio):
         indice = self._criterios.index(criterio)
         return self._elementos[indice].get()
+    
+    # setValue
+    # Para actualizar los valores en los frame
+    def setValue(self, criterio, valor):
+        indice = self._criterios.index(criterio)
+        self._elementos[indice].delete(0, END)
+        self._elementos[indice].insert(0, valor)
 
     def crearBotones(self, comando1):
-        aceptar = Button(self, text="Aceptar", font = ("Arial Rounded MT Bold", 14), fg = "white", bg = "#245efd", command=comando1).grid(pady = 50, column = 0, row = len(self._criterios)+1)
+        aceptar = Button(self, text="Aceptar", font = ("Arial Rounded MT Bold", 14), fg = "white", bg = "#8EAC50", command=comando1).grid(pady = 50, column = 0, row = len(self._criterios)+1)

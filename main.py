@@ -10,6 +10,7 @@ from baseDatos.deserializador import Deserializador
 usuario = Usuario("1","Administrador","administrador@unal.edu.co")
 serializar = Serializador(usuario)
 serializar.serializar()
+
 #Se deserializa el usuario administrador
 # deserializar = Deserializador()
 # deserializar.deserializar()
@@ -25,10 +26,3 @@ ventana.mainloop()
 #usuario = Usuario("1","Administrador","administrador@unal.edu.co",date.today(),"12345")
 #serializar = Serializador(usuario)
 #serializar.serializar()
-
-
-
-
-
-
-

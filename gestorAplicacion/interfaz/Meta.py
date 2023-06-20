@@ -1,18 +1,24 @@
-from gestorAplicacion.interfaz import Cuenta
-from gestorAplicacion.interfaz import Retiro
-from gestorAplicacion.interfaz import Abonable
-from gestorAplicacion.interfaz import Categoria
-from gestorAplicacion.interfaz import Ingreso
+
+# Ana Guarín
+# Isabela Hernandez
+# Julián Álvarez
+# Cristian Imbacuan
+
+from gestorAplicacion.interfaz.Cuenta import Cuenta
+from gestorAplicacion.interfaz.Retiro import Retiro
+from gestorAplicacion.interfaz.Abonable import Abonable
+from gestorAplicacion.interfaz.Categoria import Categoria
+from gestorAplicacion.interfaz.Ingreso import Ingreso
 from datetime import date
 
 class Meta(Abonable):
 
-    def __init__(self, usuario, nombre, fechaInicio, objetivo):
+    def __init__(self, usuario, nombre, objetivo):
         
         self._nombre = nombre
         self._cumplida = False
         self._fechaCumplimiento = None
-        self._fechaInicio = fechaInicio
+        self._fechaInicio = date.today()
         self._objetivo = objetivo
         self._usuario = usuario
         self._saldo = 0
@@ -23,7 +29,7 @@ class Meta(Abonable):
     def setNombre(self, nombre):
         self._nombre = nombre
 
-    def isCumplida(self):
+    def getCumplida(self):
         return self._cumplida
 
     def setCumplida(self, cumplida):
