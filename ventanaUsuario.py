@@ -50,7 +50,7 @@ class VentanaUsuario(Tk):
             ventanaDevs = Tk()
             ventanaDevs.geometry("800x300")
             ventanaDevs.resizable(False,False)
-            ventanaDevs.title("Aplicacion-Sistemas Gestor de Dinero")
+            ventanaDevs.title("Finanzas Personales")
 
             textoInfo = f"Finanzas Personales es una aplicación que permite al usuario realizar multiples tareas como:\n" \
                            f"1. Ver Estadisticas de la cuenta.\n" \
