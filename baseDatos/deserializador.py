@@ -7,7 +7,8 @@ class Deserializador:
         self._usuario = None
 
     def deserializar(self):
-        path = "./tmp/usuario.pkl"
+        cwd = os.getcwd()
+        path =  cwd + '/baseDatos/src/tmp/usuario.pkl'
         picklefile = open(path, "rb")
         usuario = pickle.load(picklefile)
         picklefile.close()
